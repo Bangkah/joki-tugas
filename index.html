@@ -9,29 +9,52 @@
 </head>
 <body>
 <div id="parent">
-  <center><img src="20231017_083938.png" alt="hdr" class="hdr"></center>
+
   <form>
     <label for="nama">Nama:</label>
     <input type="text" id="nama" name="nama" required>
 
     <label for="tugas">Tugas yang akan dijoki:</label>
     <select name="tugas" id="tugas">
-      <option value="pdf">tugas pdf</option>
-      <option value="excel">tugas excel</option>
+      <option value="pdf">makalah</option>
+      <option value="excel">jurnal</option>
       <option value="mapel">tugas mapel</option>
-      <option value="canva">tugas canva</option>
-      <option value="ppt">tugas ppt</option>
-      <option value="edit">tugas vidio editing</option>
+      <option value="canva">laporan</option>
+      <option value="ppt">desain</option>
+      <option value="edit">essay</option>
     </select>
 
-    <label for="keterangan">Keterangan:</label>
-    <textarea id="keterangan" name="keterangan" maxlength="400" required></textarea>
+    <label for="jenjang">jenjang:</label>
+    <select name="jenjang"id="jenjang">
+      <option value="SD/MI">SD/MI</option>
+      <option value="SMP/MTS">SMP/MTS</option>
+      <option value="SMA/MA">SMA/MA</option>
+      <option value="KULIAH">KULIAH</option>
+      <option value="OTHER">OTHER</option>
+    </select>
 
+    <label for="deadline">Deadline:</label>
+
+    <input type="datetime-local" id="deadline" name="deadline" required style=" width: 100%;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background-color: white;
+    font-size: 15px;">
+  
     <center><input type="submit" value="Submit" onclick="kirimPesan()"></center>
-  </form>
+   
+      <p class="note">
+          Catatan: waktu pengerjaan 48 jam.<br>
+          Permintaan dipercepat akan dikenakan biaya 2x lipat.<br>
+      </p>
+  
+  
   
   <footer>
-    <h3 id="ftr">© copyright by Ultraman jOki tugas</h3>
+    <h3 id="ftr">© copyright by jOki tugas</h3>
   </footer>
   
 </div>
@@ -42,7 +65,7 @@
       const tugas = document.getElementById("tugas").value;
       const keterangan = document.getElementById("keterangan").value;
 
-      const nomorWhatsApp = "+6285270573533";
+      const nomorWhatsApp = "+6282225191762";
       const pesanWhatsApp = `Nama : ${nama}%0ATugas : ${tugas}%0AKeterangan : ${keterangan}`;
 
       window.open(`https://wa.me/${nomorWhatsApp}?text=${pesanWhatsApp}`, "_blank");
